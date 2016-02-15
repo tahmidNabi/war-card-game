@@ -14,6 +14,8 @@ public class WarGame {
     private Player playerTwo;
     private CardDeck cardDeck;
 
+    public static final int MAX_TURNS = 100;
+
     public WarGame(Player playerOne, Player playerTwo, CardDeck cardDeck) {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
@@ -39,10 +41,10 @@ public class WarGame {
      * the players engage in a "war". Game stops once one player no longer has enough cards to continue playing.
      *
      */
-    public void playGame() {
+    public void playGame() throws Exception{
         CardPile warPile = new CardPile();
-        int turn = 1;
-        while (true) {
+
+        for (int turn = 1; turn <= MAX_TURNS; turn++) {
             if (!hasEnoughCards(1)) {
                 break;
             }
@@ -59,12 +61,13 @@ public class WarGame {
                 collectWonCards(c1, c2);
             }
 
-            System.out.println();
+            System.out.println("\t" + playerOne.getName() + " has " + playerOne.getCardCount() + " cards");
+            System.out.println("\t" + playerTwo.getName() + " has " + playerTwo.getCardCount() + " cards");
+
+            Thread.sleep(100);
             if (cardsExhausted) {
-                System.out.println("Someone won all!");
                 break;
             }
-            ++turn;
         }
     }
 
