@@ -1,12 +1,15 @@
 package com.tnob.game.objects;
 
+import com.tnob.game.exception.CardExhaustedException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Class representing a pile of playing cards. New cards are added to the end of the pile.
- * Cards are retrieved from top of the pile
- * Created by tahmid on 2/13/16.
+ * Cards are retrieved from top of the pile.
+ * @author tahmid
+ * @since 2/13/16
  */
 public class CardPile {
     private List<Card> pile;
@@ -14,14 +17,14 @@ public class CardPile {
     private int endOfPile;
 
     public CardPile() {
-        pile = new ArrayList<Card>(52);
+        pile = new ArrayList<Card>(CardDeck.SUIT_SIZE * Suit.values().length);
         topOfPile = 0;
         endOfPile = 0;
     }
 
     public int getSize() {
         if (topOfPile > endOfPile) {
-
+            throw new CardExhaustedException();
         }
         return (endOfPile - topOfPile);
     }

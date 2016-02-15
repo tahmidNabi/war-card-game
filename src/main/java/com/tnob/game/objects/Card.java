@@ -7,7 +7,8 @@ import java.util.Map;
  * A class representing a Playing Card object. Each Card has a rank and a suit associated with.
  * 4 of the ranks have special values. A card with the rank of 1 is an "ACE", and is at a higher
  * value compared to other ranks.
- * Created by tahmid on 2/13/16.
+ * @author tahmid
+ * @since 2/13/16
  */
 public class Card implements Comparable<Card> {
 
@@ -15,6 +16,7 @@ public class Card implements Comparable<Card> {
     private static final int JACK = 11;
     private static final int QUEEN = 12;
     private static final int KING = 13;
+    //ACEs are assigned SPECIAL ACE RANK to ensure that ACEs are ranked higher compared to other cards
     private static final int SPECIAL_ACE_RANK = 14;
 
     private static final Map<Integer, String> SPECIAL_CARDS;
@@ -52,6 +54,13 @@ public class Card implements Comparable<Card> {
             return false;
     }
 
+    /**
+     * Compares two cards based on their ranks. A card having a rank of ACE is a special case, as ACE is 1, but
+     * is ranked over all other values. To implement this, the rank of ACE is assigned SPECIAL_ACE_RANK before
+     * comparison.
+     * @param otherCard
+     * @return
+     */
     public int compareTo(Card otherCard) {
         int thisRank = (this.getRank() == ACE) ? SPECIAL_ACE_RANK : this.getRank();
         int otherRank = (otherCard.getRank() == ACE) ? SPECIAL_ACE_RANK : otherCard.getRank();

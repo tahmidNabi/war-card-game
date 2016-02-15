@@ -1,12 +1,12 @@
 package com.tnob.game.objects;
 
+import com.tnob.game.exception.CardExhaustedException;
 import org.junit.*;
 import org.junit.rules.ExpectedException;
 
-import static org.junit.Assert.*;
-
 /**
- * Created by tahmid on 2/13/16.
+ * @author tahmid
+ * @since 2/13/16
  */
 public class CardPileTest {
 

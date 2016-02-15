@@ -17,11 +17,12 @@ public class Main {
         System.out.println("Enter name of playerTwo");
         playerTwo = new Player(scanner.nextLine());
 
-        System.out.println("The game will run for a maximum of 10,000 turns.\n If one player fails to win all " +
-                "by this turn, the player with the higher number of cards\n at the end of " + WarGame.MAX_TURNS +" turns" +
-                " will be declared the winner");
+        System.out.println("The game will run for a maximum of " + WarGame.MAX_TURNS +" turns.\n" +
+                "If one player fails to win all by this turn, the player with the higher number of cards\n" +
+                "at the end of " + WarGame.MAX_TURNS +" turns will be declared the winner");
 
-        Thread.sleep(2000);
+        System.out.println("Press any key to begin the game");
+        System.in.read();
 
         CardDeck cardDeck = new CardDeck();
 

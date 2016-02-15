@@ -10,7 +10,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by tahmid on 2/13/16.
+ * @author tahmid
+ * @since 2/13/16
  */
 public class PlayerTest {
     Player player;

@@ -1,15 +1,12 @@
 package com.tnob.game.objects;
 
-import javafx.scene.media.SubtitleTrack;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
- * Created by tahmid on 2/13/16.
+ * @author tahmid
+ * @since 2/13/16
  */
 
 

@@ -1,7 +1,8 @@
-package com.tnob.game.objects;
+package com.tnob.game.exception;
 
 /**
- * Created by tahmid on 2/14/16.
+ * @author tahmid
+ * @since 2/14/16
  */
 public class CardExhaustedException extends RuntimeException {
 }
